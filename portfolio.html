@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raghav Gupta | Cinematic Video Editor &amp; Shooter</title>
+  <meta name="description" content="Premium video editing and cinematic shooting portfolio of Raghav Gupta. Showreel, selected projects, services, testimonials, and contact links.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Raghav Gupta | Cinematic Video Editor &amp; Shooter">
+  <meta property="og:description" content="Cinematic edits and shoots for brands and creators.">
+  <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/">
+  <meta property="og:image" content="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/preview.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Raghav Gupta | Cinematic Video Editor &amp; Shooter">
+  <meta name="twitter:description" content="Cinematic edits and shoots for brands and creators.">
+  <meta name="twitter:image" content="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/preview.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f3f0ea;
+      --panel:#fbf8f3;
+      --text:#121212;
+      --muted:#565656;
+      --line:#ded7cb;
+      --accent:#ca3f24;
+      --accent-2:#065f63;
+      --hero-grad:linear-gradient(145deg,#22180f 0%,#332213 45%,#151515 100%);
+      --btn-text:#ffffff;
+      --shadow:0 20px 50px rgba(0,0,0,.13);
+    }
+
+    [data-theme="dark"]{
+      --bg:#0f0f0f;
+      --panel:#181818;
+      --text:#f4efe4;
+      --muted:#b4ad9d;
+      --line:#2d2a24;
+      --accent:#ff6d3f;
+      --accent-2:#49c2b8;
+      --hero-grad:linear-gradient(145deg,#2d1c10 0%,#171717 50%,#101010 100%);
+      --btn-text:#0f0f0f;
+      --shadow:0 18px 44px rgba(0,0,0,.38);
+    }
+
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;}
+    body{
+      font-family:"Manrope",system-ui,sans-serif;
+      background:
+        radial-gradient(900px 500px at -20% -10%, rgba(202,63,36,.16), transparent 60%),
+        radial-gradient(900px 500px at 115% 0%, rgba(6,95,99,.16), transparent 65%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+      transition:background .35s ease,color .25s ease;
+    }
+
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;}
+
+    .container{width:min(1120px,92vw);margin:0 auto;}
+    .section{padding:56px 0;}
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      border-bottom:1px solid color-mix(in oklab, var(--line) 75%, transparent);
+      backdrop-filter:blur(12px);
+      background:color-mix(in oklab, var(--bg) 80%, transparent);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+      gap:12px;
+    }
+
+    .brand{
+      font-family:"Anton",sans-serif;
+      font-size:1.6rem;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+
+    .menu{
+      display:none;
+      gap:14px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+
+    .actions{display:flex;gap:8px;align-items:center;}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:.88rem;
+      font-weight:700;
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+      transition:transform .16s ease,background .2s ease,color .2s ease,border-color .2s ease;
+      will-change:transform;
+    }
+
+    .btn:hover{transform:translateY(-1px);}
+    .btn:active{transform:translateY(0);}
+
+    .btn.primary{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:var(--btn-text);
+    }
+
+    .btn.secondary{
+      background:color-mix(in oklab,var(--panel) 80%,transparent);
+    }
+
+    .hero{padding:24px 0 16px;}
+
+    .hero-card{
+      background:var(--hero-grad);
+      border:1px solid color-mix(in oklab, var(--accent) 30%, var(--line));
+      border-radius:24px;
+      padding:24px;
+      color:#f5efe2;
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    [data-theme="dark"] .hero-card{color:#f9f4ea;}
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-80px;
+      width:260px;
+      height:260px;
+      background:radial-gradient(circle at center, rgba(255,109,63,.38), transparent 65%);
+      pointer-events:none;
+    }
+
+    .kicker{
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:.72rem;
+      font-weight:800;
+      color:#ffbe9f;
+    }
+
+    .hero h1{
+      margin:10px 0 14px;
+      font-family:"Anton",sans-serif;
+      letter-spacing:.6px;
+      font-size:clamp(2.3rem,12vw,5.8rem);
+      line-height:.94;
+      text-transform:uppercase;
+    }
+
+    .hero p{
+      margin:0;
+      max-width:60ch;
+      font-size:1rem;
+      color:rgba(255,246,230,.88);
+    }
+
+    .hero-cta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
+
+    .stat-grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .stat{
+      padding:14px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:14px;
+      background:rgba(255,255,255,.06);
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:8px;
+    }
+
+    .stat .n{
+      font-family:"Anton",sans-serif;
+      font-size:2rem;
+      line-height:1;
+    }
+
+    .stat .l{font-size:.85rem;color:rgba(255,246,230,.85);}
+
+    .section-head{
+      margin-bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-family:"Anton",sans-serif;
+      font-size:2rem;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+
+    .section-head p{margin:0;color:var(--muted);font-size:.95rem;}
+
+    .showreel-wrap{padding:12px;}
+    .showreel-frame{
+      border-radius:14px;
+      overflow:hidden;
+      background:#000;
+      aspect-ratio:16/9;
+      border:1px solid color-mix(in oklab, var(--line) 70%, transparent);
+    }
+
+    .showreel-frame iframe{width:100%;height:100%;border:0;}
+
+    .filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+    .chip{
+      border:1px solid var(--line);
+      background:var(--panel);
+      color:var(--muted);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:.8rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:all .2s ease;
+    }
+
+    .chip.active{
+      color:var(--btn-text);
+      background:var(--accent);
+      border-color:var(--accent);
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .project-card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      background:var(--panel);
+      transform:translateY(10px);
+      opacity:0;
+      transition:transform .35s ease,opacity .35s ease,border-color .2s ease;
+    }
+
+    .project-card.show{transform:translateY(0);opacity:1;}
+
+    .project-cover{
+      height:148px;
+      display:flex;
+      align-items:end;
+      padding:12px;
+      font-weight:700;
+      color:#f9f4e8;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.2)),
+        linear-gradient(120deg, #51412a, #0e4646);
+    }
+
+    .project-body{padding:12px;}
+    .project-type{
+      display:inline-block;
+      font-size:.72rem;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      font-weight:800;
+      color:var(--accent-2);
+    }
+
+    .project-title{margin:6px 0 4px;font-size:1rem;font-weight:800;}
+    .project-desc{margin:0;color:var(--muted);font-size:.88rem;}
+    .project-link{margin-top:10px;display:inline-flex;font-size:.84rem;color:var(--accent);font-weight:700;}
+
+    .services-grid,
+    .proof-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .service,
+    .proof,
+    .about-block,
+    .testimonial{padding:16px;}
+
+    .service h3,.proof h3{margin:0 0 8px;font-size:1.03rem;}
+    .service p,.proof p,.about-block p,.testimonial p{margin:0;color:var(--muted);font-size:.92rem;}
+
+    .about-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+    .about-block strong{display:block;font-size:1.2rem;margin-bottom:8px;font-family:"Anton",sans-serif;letter-spacing:.5px;text-transform:uppercase;}
+
+    .testimonial strong{display:block;margin-top:8px;font-size:.86rem;color:var(--text);}
+
+    .contact-box{padding:18px;}
+    .contact-box h2{margin:0 0 8px;font-family:"Anton",sans-serif;font-size:2rem;text-transform:uppercase;letter-spacing:.5px;}
+    .contact-box p{margin:0;color:var(--muted);font-size:.92rem;}
+    .contact-actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;}
+
+    .footer{padding:32px 0 40px;color:var(--muted);font-size:.78rem;text-align:center;}
+
+    @media (min-width:760px){
+      .menu{display:flex;}
+      .hero{padding:40px 0 20px;}
+      .hero-card{padding:30px;}
+      .stat-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+      .projects{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .services-grid,.proof-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+      .about-grid{grid-template-columns:1.1fr .9fr;}
+    }
+
+    @media (min-width:1040px){
+      .projects{grid-template-columns:repeat(3,minmax(0,1fr));}
+      .section{padding:64px 0;}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Raghav Gupta</div>
+      <div class="menu">
+        <a href="#showreel">Showreel</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="actions">
+        <button class="btn secondary" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+        <a class="btn primary" id="igLinkTop" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container" id="home">
+    <div class="hero-card">
+      <div class="kicker" id="heroRole">Video Editor + Cinematographer</div>
+      <h1 id="heroTitle">I Build Videos People Actually Watch</h1>
+      <p id="heroTagline">From shoot to final export, I craft bold, cinematic content for brands and creators that need attention and retention.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn secondary" id="ctaEmail" href="mailto:youremail@example.com">Book a Project</a>
+        <a class="btn secondary" id="ctaWhatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <div class="stat-grid" id="statGrid"></div>
+    </div>
+  </header>
+
+  <section class="section container" id="showreel">
+    <div class="section-head">
+      <h2>Showreel</h2>
+      <p>Replace this video link in one place later. Layout stays the same.</p>
+    </div>
+    <div class="panel showreel-wrap">
+      <div class="showreel-frame">
+        <iframe id="showreelEmbed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" id="projects">
+    <div class="section-head">
+      <h2>Selected Projects</h2>
+      <p>Use the filters to quickly show editing, shooting, or brand work.</p>
+    </div>
+    <div class="filter-row" id="filterRow"></div>
+    <div class="projects" id="projectGrid"></div>
+  </section>
+
+  <section class="section container" id="services">
+    <div class="section-head">
+      <h2>Services</h2>
+      <p>Clear packages, clear outcomes.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </section>
+
+  <section class="section container" id="about">
+    <div class="section-head">
+      <h2>About Me</h2>
+      <p>Creative direction + execution in one workflow.</p>
+    </div>
+    <div class="about-grid">
+      <article class="panel about-block">
+        <strong>My Approach</strong>
+        <p id="aboutText">I combine story-first editing with platform strategy, so your content feels premium and still performs where it matters.</p>
+      </article>
+      <article class="panel about-block">
+        <strong>Working Style</strong>
+        <p>I keep communication simple, delivery fast, and revisions organized so projects move quickly without quality drops.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section container" id="testimonials">
+    <div class="section-head">
+      <h2>Testimonials &amp; Proof</h2>
+      <p>Real feedback and measurable outcomes.</p>
+    </div>
+    <div class="proof-grid" id="proofGrid"></div>
+    <div class="proof-grid" id="testimonialGrid" style="margin-top:12px;"></div>
+  </section>
+
+  <section class="section container" id="contact">
+    <div class="panel contact-box">
+      <h2>Let’s Build Your Next Film</h2>
+      <p>Available for paid editing and shooting projects.</p>
+      <div class="contact-actions">
+        <a class="btn primary" id="contactEmail" href="mailto:youremail@example.com">Email</a>
+        <a class="btn secondary" id="contactWhatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn secondary" id="contactInstagram" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <span id="footerText">© 2026 Raghav Gupta. Cinematic video editing and shooting portfolio.</span>
+  </footer>
+
+  <script type="application/ld+json" id="jsonLdData">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raghav Gupta",
+    "jobTitle": "Video Editor and Cinematographer",
+    "url": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/",
+    "sameAs": [
+      "https://instagram.com/bhaagyadam.edits"
+    ]
+  }
+  </script>
+
+  <script>
+    /*
+      EASY UPDATE AREA
+      Change values in this object when you want to update content.
+      You do not need to change the HTML layout below.
+    */
+    const siteContent = {
+      profile: {
+        name: "Raghav Gupta",
+        role: "Video Editor + Cinematographer",
+        title: "I Build Videos People Actually Watch",
+        tagline: "From shoot to final export, I craft bold, cinematic content for brands and creators that need attention and retention.",
+        email: "youremail@example.com",
+        whatsapp: "919999999999",
+        instagram: "https://instagram.com/bhaagyadam.edits"
+      },
+      stats: [
+        { number: "120+", label: "Videos Delivered" },
+        { number: "35M+", label: "Combined Views" },
+        { number: "48h", label: "Fast Turnaround" }
+      ],
+      showreelEmbedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      filters: [
+        { key: "all", label: "All" },
+        { key: "edit", label: "Editing" },
+        { key: "shoot", label: "Shooting" },
+        { key: "brand", label: "Brand" }
+      ],
+      projects: [
+        {
+          type: "edit",
+          tag: "Editing",
+          title: "Gym Transformation Reel",
+          description: "Hook-first vertical edit with subtitles, beat cuts, and retention pacing.",
+          link: "#"
+        },
+        {
+          type: "shoot",
+          tag: "Shooting",
+          title: "Streetwear Launch Film",
+          description: "Fast outdoor shoot with handheld and gimbal motion for social-first delivery.",
+          link: "#"
+        },
+        {
+          type: "brand",
+          tag: "Brand",
+          title: "Cafe Promo Campaign",
+          description: "Lifestyle commercial video and cutdowns for paid ads and Instagram.",
+          link: "#"
+        },
+        {
+          type: "edit",
+          tag: "Editing",
+          title: "Podcast Shorts Pack",
+          description: "10 short clips repurposed from one long interview episode.",
+          link: "#"
+        },
+        {
+          type: "brand",
+          tag: "Brand",
+          title: "Product Teaser",
+          description: "Macro visuals, typography overlays, and tension-based reveal pacing.",
+          link: "#"
+        },
+        {
+          type: "shoot",
+          tag: "Shooting",
+          title: "Wedding Highlight",
+          description: "Emotion-led story edit with cinematic color and clean audio blend.",
+          link: "#"
+        }
+      ],
+      services: [
+        {
+          title: "Short-Form Editing",
+          description: "Reels and shorts with strong hooks, captions, sound design, and retention-focused pacing."
+        },
+        {
+          title: "Cinematic Shoot",
+          description: "On-location shooting for brand films, behind-the-scenes cuts, and creator campaigns."
+        },
+        {
+          title: "Color + Final Delivery",
+          description: "Color grading, cleanup, and optimized exports for social and ad platforms."
+        }
+      ],
+      proof: [
+        { title: "Watch-Time Lift", description: "Average watch-time increased by up to 2x on edited client reels." },
+        { title: "Campaign Speed", description: "End-to-end turnaround possible within 48 hours for urgent projects." },
+        { title: "Cross-Platform", description: "Delivery formats optimized for Instagram, YouTube Shorts, and ads." }
+      ],
+      testimonials: [
+        {
+          quote: "He turned raw clips into a campaign-ready reel in two days and performance jumped immediately.",
+          author: "Brand Founder"
+        },
+        {
+          quote: "Very clean communication, premium quality output, and no delays.",
+          author: "Creator Client"
+        },
+        {
+          quote: "Best editor I have worked with for short-form storytelling.",
+          author: "Fitness Coach"
+        }
+      ],
+      aboutText: "I combine story-first editing with platform strategy, so your content feels premium and still performs where it matters."
+    };
+
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme === "dark") root.setAttribute("data-theme", "dark");
+
+    const heroRole = document.getElementById("heroRole");
+    const heroTitle = document.getElementById("heroTitle");
+    const heroTagline = document.getElementById("heroTagline");
+    const statGrid = document.getElementById("statGrid");
+    const showreelEmbed = document.getElementById("showreelEmbed");
+    const filterRow = document.getElementById("filterRow");
+    const projectGrid = document.getElementById("projectGrid");
+    const servicesGrid = document.getElementById("servicesGrid");
+    const proofGrid = document.getElementById("proofGrid");
+    const testimonialGrid = document.getElementById("testimonialGrid");
+    const aboutText = document.getElementById("aboutText");
+
+    heroRole.textContent = siteContent.profile.role;
+    heroTitle.textContent = siteContent.profile.title;
+    heroTagline.textContent = siteContent.profile.tagline;
+    aboutText.textContent = siteContent.aboutText;
+
+    const emailHref = `mailto:${siteContent.profile.email}`;
+    const whatsappHref = `https://wa.me/${siteContent.profile.whatsapp}`;
+
+    document.getElementById("ctaEmail").href = emailHref;
+    document.getElementById("ctaWhatsapp").href = whatsappHref;
+    document.getElementById("contactEmail").href = emailHref;
+    document.getElementById("contactWhatsapp").href = whatsappHref;
+
+    ["igLinkTop", "contactInstagram"].forEach((id) => {
+      document.getElementById(id).href = siteContent.profile.instagram;
+    });
+
+    showreelEmbed.src = siteContent.showreelEmbedUrl;
+
+    siteContent.stats.forEach((item) => {
+      const stat = document.createElement("article");
+      stat.className = "stat";
+      stat.innerHTML = `<span class="n">${item.number}</span><span class="l">${item.label}</span>`;
+      statGrid.appendChild(stat);
+    });
+
+    function renderProjects(activeFilter = "all"){
+      projectGrid.innerHTML = "";
+      const list = activeFilter === "all"
+        ? siteContent.projects
+        : siteContent.projects.filter((project) => project.type === activeFilter);
+
+      list.forEach((project, index) => {
+        const card = document.createElement("article");
+        card.className = "project-card";
+        const safeLink = project.link && project.link !== "#";
+
+        card.innerHTML = `
+          <div class="project-cover">${project.title}</div>
+          <div class="project-body">
+            <span class="project-type">${project.tag}</span>
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-desc">${project.description}</p>
+            ${safeLink ? `<a class="project-link" href="${project.link}" target="_blank" rel="noopener noreferrer">View project</a>` : ""}
+          </div>
+        `;
+
+        projectGrid.appendChild(card);
+        setTimeout(() => card.classList.add("show"), index * 70);
+      });
+    }
+
+    siteContent.filters.forEach((filter, index) => {
+      const chip = document.createElement("button");
+      chip.className = `chip${index === 0 ? " active" : ""}`;
+      chip.type = "button";
+      chip.textContent = filter.label;
+      chip.dataset.filter = filter.key;
+
+      chip.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach((item) => item.classList.remove("active"));
+        chip.classList.add("active");
+        renderProjects(filter.key);
+      });
+
+      filterRow.appendChild(chip);
+    });
+
+    siteContent.services.forEach((service) => {
+      const item = document.createElement("article");
+      item.className = "panel service";
+      item.innerHTML = `<h3>${service.title}</h3><p>${service.description}</p>`;
+      servicesGrid.appendChild(item);
+    });
+
+    siteContent.proof.forEach((proof) => {
+      const item = document.createElement("article");
+      item.className = "panel proof";
+      item.innerHTML = `<h3>${proof.title}</h3><p>${proof.description}</p>`;
+      proofGrid.appendChild(item);
+    });
+
+    siteContent.testimonials.forEach((testimonial) => {
+      const item = document.createElement("article");
+      item.className = "panel testimonial";
+      item.innerHTML = `<p>"${testimonial.quote}"</p><strong>${testimonial.author}</strong>`;
+      testimonialGrid.appendChild(item);
+    });
+
+    const currentYear = new Date().getFullYear();
+    document.getElementById("footerText").textContent = `© ${currentYear} ${siteContent.profile.name}. Cinematic video editing and shooting portfolio.`;
+
+    const themeToggle = document.getElementById("themeToggle");
+    function refreshThemeButton(){
+      const isDark = root.getAttribute("data-theme") === "dark";
+      themeToggle.textContent = isDark ? "Light" : "Dark";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        root.removeAttribute("data-theme");
+        localStorage.setItem("portfolio-theme", "light");
+      } else {
+        root.setAttribute("data-theme", "dark");
+        localStorage.setItem("portfolio-theme", "dark");
+      }
+      refreshThemeButton();
+    });
+
+    renderProjects();
+    refreshThemeButton();
+  </script>
+</body>
+</html>

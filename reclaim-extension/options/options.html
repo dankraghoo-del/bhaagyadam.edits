@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reclaim — Settings</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0b1220; color: #eaf0ff; min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex; justify-content: center; padding: 48px 20px;
+    }
+    .wrap { width: 100%; max-width: 620px; }
+    .brand { font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7aa2ff; font-size: 14px; }
+    h1 { font-size: 26px; margin: 6px 0 4px; letter-spacing: -0.01em; }
+    .lede { color: #8ba0c6; margin-bottom: 28px; }
+    .card {
+      background: #131c30; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 8px 20px; margin-bottom: 20px;
+    }
+    .row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .row:last-child { border-bottom: 0; }
+    .row .label { font-size: 15px; font-weight: 600; }
+    .row .desc { font-size: 13px; color: #8ba0c6; margin-top: 3px; }
+    .row .control { flex: 0 0 auto; }
+    input[type="checkbox"] { width: 20px; height: 20px; accent-color: #5b8bff; cursor: pointer; }
+    input[type="number"], select {
+      background: #0b1220; color: #eaf0ff; border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px; padding: 8px 10px; font-size: 14px; width: 90px;
+    }
+    select { width: 150px; }
+    .section-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #7c8bab; margin: 4px 0 -4px; padding-top: 14px; }
+    .danger { margin-top: 8px; }
+    .btn {
+      background: linear-gradient(180deg,#5b8bff,#3f6fe6); color: #fff; border: 0;
+      border-radius: 10px; padding: 12px 18px; font-size: 14px; font-weight: 700; cursor: pointer;
+    }
+    .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,0.16); color: #b7c4e0; }
+    .saved { color: #59d38a; font-size: 13px; opacity: 0; transition: opacity .2s; margin-left: 12px; }
+    .saved.show { opacity: 1; }
+    footer { color: #55637f; font-size: 12px; margin-top: 24px; text-align: center; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">Reclaim</div>
+    <h1>Settings</h1>
+    <p class="lede">Tune how hard the wall is. Changes save instantly.</p>
+
+    <div class="card">
+      <div class="row">
+        <div><div class="label">Reclaim is on</div><div class="desc">Master switch for all blocking.</div></div>
+        <div class="control"><input type="checkbox" id="enabled"></div>
+      </div>
+      <div class="row">
+        <div><div class="label">Block Instagram Reels</div><div class="desc">Stops the Reels feed and hides the Reels tab.</div></div>
+        <div class="control"><input type="checkbox" id="blockInstagramReels"></div>
+      </div>
+      <div class="row">
+        <div><div class="label">Hide Instagram Explore</div><div class="desc">Explore is a scroll trap too — optional.</div></div>
+        <div class="control"><input type="checkbox" id="hideInstagramExplore"></div>
+      </div>
+      <div class="row">
+        <div><div class="label">Block YouTube Shorts</div><div class="desc">Removes Shorts shelves, the Shorts tab, and Shorts in search.</div></div>
+        <div class="control"><input type="checkbox" id="blockYouTubeShorts"></div>
+      </div>
+      <div class="row">
+        <div><div class="label">What happens on a Shorts link</div><div class="desc">Block it, or open it as a normal video (no swipe feed).</div></div>
+        <div class="control">
+          <select id="youtubeShortsMode">
+            <option value="block">Block completely</option>
+            <option value="redirect">Open as normal video</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">The pause</div>
+    <div class="card">
+      <div class="row">
+        <div><div class="label">Show intervention screen</div><div class="desc">A breathing pause + your streak before you can continue.</div></div>
+        <div class="control"><input type="checkbox" id="interventionEnabled"></div>
+      </div>
+      <div class="row">
+        <div><div class="label">Pause length (seconds)</div><div class="desc">How long the “Continue” button stays locked.</div></div>
+        <div class="control"><input type="number" id="pauseSeconds" min="0" max="120"></div>
+      </div>
+      <div class="row">
+        <div><div class="label">Daily allowance (minutes)</div><div class="desc">0 = a hard wall. Above 0 lets you scroll this long per day.</div></div>
+        <div class="control"><input type="number" id="dailyAllowanceMinutes" min="0" max="240"></div>
+      </div>
+    </div>
+
+    <div class="section-title">Progress</div>
+    <div class="card">
+      <div class="row">
+        <div><div class="label">Streak &amp; stats</div><div class="desc" id="statsLine">—</div></div>
+        <div class="control danger">
+          <button class="btn ghost" id="resetStats">Reset stats</button>
+          <span class="saved" id="savedMsg">Saved</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Reclaim runs entirely on your device. No accounts, no tracking, nothing leaves your browser.
+    </footer>
+  </div>
+
+  <script src="../content/shared.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

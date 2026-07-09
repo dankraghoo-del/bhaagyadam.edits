@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="head">
+    <div class="brand">Reclaim</div>
+    <label class="master">
+      <input type="checkbox" id="enabled">
+      <span class="switch"></span>
+    </label>
+  </header>
+
+  <section class="hero">
+    <div class="streak"><span id="streak">0</span><small>day streak</small></div>
+    <div class="hero-sub" id="heroSub">Blocking Reels &amp; Shorts</div>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-num" id="intercepts">0</div>
+      <div class="stat-label">times stopped</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="reclaimed">0m</div>
+      <div class="stat-label">reclaimed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="allowance">Off</div>
+      <div class="stat-label">daily allowance</div>
+    </div>
+  </section>
+
+  <section class="toggles">
+    <label class="row">
+      <span>Block Instagram Reels</span>
+      <input type="checkbox" id="blockInstagramReels" class="chk">
+    </label>
+    <label class="row">
+      <span>Block YouTube Shorts</span>
+      <input type="checkbox" id="blockYouTubeShorts" class="chk">
+    </label>
+    <label class="row">
+      <span>Shorts → normal video (redirect)</span>
+      <input type="checkbox" id="youtubeRedirect" class="chk">
+    </label>
+  </section>
+
+  <footer class="foot">
+    <button id="openOptions" class="link">All settings</button>
+  </footer>
+
+  <script src="../content/shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

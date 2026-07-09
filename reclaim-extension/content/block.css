@@ -1,0 +1,134 @@
+/* Reclaim — overlay + element hiding */
+
+/* Elements the content scripts tag for removal. */
+.reclaim-hide { display: none !important; }
+
+/* When the intervention overlay is up, freeze the page underneath. */
+html[data-reclaim-blocked] { overflow: hidden !important; }
+html[data-reclaim-blocked] body > *:not(#reclaim-overlay) {
+  filter: blur(0);
+}
+
+#reclaim-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(1200px 600px at 50% -10%, #1d2b4a 0%, #0b1220 55%, #060a12 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #eaf0ff;
+  -webkit-font-smoothing: antialiased;
+  animation: reclaim-fade 0.25s ease-out;
+}
+
+@keyframes reclaim-fade { from { opacity: 0; } to { opacity: 1; } }
+
+#reclaim-overlay .reclaim-card {
+  width: min(520px, 100%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 40px 32px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+#reclaim-overlay .reclaim-logo {
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #7aa2ff;
+  margin-bottom: 18px;
+}
+
+#reclaim-overlay .reclaim-shield { font-size: 46px; line-height: 1; }
+
+#reclaim-overlay .reclaim-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 14px 0 8px;
+  letter-spacing: -0.01em;
+}
+
+#reclaim-overlay .reclaim-quote {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #b7c4e0;
+  margin: 0 auto 26px;
+  max-width: 40ch;
+}
+
+#reclaim-overlay .reclaim-stats {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+#reclaim-overlay .reclaim-stat {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 14px 8px;
+}
+
+#reclaim-overlay .reclaim-stat-num {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+#reclaim-overlay .reclaim-stat-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8ba0c6;
+  margin-top: 4px;
+}
+
+#reclaim-overlay .reclaim-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+#reclaim-overlay .reclaim-btn {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.15s ease, background 0.15s ease;
+}
+#reclaim-overlay .reclaim-btn:active { transform: translateY(1px); }
+
+#reclaim-overlay .reclaim-btn-primary {
+  background: linear-gradient(180deg, #5b8bff 0%, #3f6fe6 100%);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(63, 111, 230, 0.4);
+}
+#reclaim-overlay .reclaim-btn-primary:hover { filter: brightness(1.05); }
+
+#reclaim-overlay .reclaim-btn-ghost {
+  background: transparent;
+  color: #9fb0d4;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+#reclaim-overlay .reclaim-btn-ghost:disabled { opacity: 0.45; cursor: not-allowed; }
+#reclaim-overlay .reclaim-btn-ghost:not(:disabled):hover { color: #cdd8f0; }
+
+#reclaim-overlay .reclaim-allowance {
+  font-size: 12px;
+  color: #7c8bab;
+  margin-top: 2px;
+}

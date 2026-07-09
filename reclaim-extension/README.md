@@ -24,6 +24,13 @@ time you're winning back — so quitting feels like progress, not punishment.
 - **100% local.** No accounts, no servers, no tracking. Everything lives in your
   browser's local storage.
 
+## On iPhone / iPad
+
+iOS sandboxes the native apps, so blocking Reels/Shorts there works differently.
+See **[`iphone/SETUP.md`](iphone/SETUP.md)** for the three options — the surgical one
+uses Safari plus the included **[`iphone/reclaim.user.js`](iphone/reclaim.user.js)**
+userscript (same blocking as this extension, running through the free Userscripts app).
+
 ## Install (Chrome / Edge / Brave / any Chromium browser)
 
 1. Download or clone this folder (`reclaim-extension/`).
